@@ -3,7 +3,7 @@
    minikube start --driver=docker
 
 2. Point your terminal to Minikube Docker daemon (to use local images):
-   eval $(minikube docker-env)
+   eval $(minikube docker-env)  or minikube docker-env
 
 3. Build Docker image (inside Minikube environment):
    docker build -t springboot-hello-app .
