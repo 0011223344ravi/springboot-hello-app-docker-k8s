@@ -1,0 +1,22 @@
+
+1. Build the JAR:
+   ./mvnw clean package -DskipTests
+
+2. Create a Dockerfile in project root with:
+   FROM openjdk:17-jdk-slim
+   WORKDIR //app
+   COPY target/*.jar app.jar
+   EXPOSE 8080
+   ENTRYPOINT ["java", "-jar", "app.jar"]
+
+3. Build Docker image:
+   docker build -t springboot-hello-app .
+
+4. Verify image exists:
+   docker images
+
+5. Run the container:
+   docker run -p 8080:8080 springboot-hello-app
+
+6. Access the app:
+   Visit http://localhost:8080 in your browser.
